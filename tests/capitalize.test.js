@@ -4,7 +4,7 @@ describe("Capitalize first letter of string", () => {
     test("Greeting ", () => {
         expect(capitalize("hello")).toBe("Hello");
     });
-    test("Is string", () => {
+    test("Is undefined", () => {
         expect(capitalize()).toBe("")
     });
 });
