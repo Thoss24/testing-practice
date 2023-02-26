@@ -8,7 +8,7 @@ function analyzeArray(arr) {
         length: 0
     }
 
-    obj.average = arr.map(x => x).reduce((a, b) => {return a + b}) / arr.length
+    obj.average = arr.reduce((a, b) => {return a + b}) / arr.length
 
     obj.min = Math.min(...arr)
 
