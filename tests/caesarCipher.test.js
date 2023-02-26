@@ -2,9 +2,9 @@ let caesarCipher = require('../code/caesarCipher');
 
 describe("Caesar Cipher tests", () => {
     test("Caesar uppercase", () => {
-        expect(caesarCipher("A", 3)).toBe("D")
+        expect(caesarCipher("C")).toBe("D")
     });
     test("Caesar lowercase", () => {
-        expect(caesarCipher("a", 3)).toBe("d")
+        expect(caesarCipher("b")).toBe("c")
     });
 })

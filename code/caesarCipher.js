@@ -1,26 +1,33 @@
-function lowerCase(char) {
-    if (char === char.toLowerCase()) return true
 
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const cipher = "bcdefghijklmnopqrstuvwxyza";
+
+
+function lowerCase(char) {
+    if (char === char.toLowerCase() && char != char.toUpperCase()) return true
     return false
 }
 
 function upperCase(char) {
-    if (char === char.toUpperCase()) return true
-
+    if (char === char.toUpperCase() && char != char.toLowerCase()) return true
     return false
 }
 
-function caesarCipher(str, key) {
-   let alphabet = "abcdefghijklmnopqrstuvwxyz";
+function indexOfChar(char) {
+    const index = alphabet.indexOf(char)
+    let cipherChar = cipher[index]
+    return cipherChar
+}
+
+function caesarCipher(str) {
    let caesarString = ""
 
    for (let i = 0; i < str.length; i++) {
     if (lowerCase(str[i])) {
-        let lowerString = alphabet.indexOf(str[i]);
-        caesarString += alphabet[(lowerString + key) % 26]
-    } else if(upperCase(str[i])) {
-        let upperString = alphabet.indexOf(str[i])
-        caesarString += alphabet[(upperString + key) % 26]
+        caesarString += indexOfChar(str[i])
+    } 
+    else if(upperCase(str[i])) {
+        caesarString += indexOfChar(str[i].toLowerCase()).toUpperCase()
     }
    } 
    return caesarString
